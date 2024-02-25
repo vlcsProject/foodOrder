@@ -1,0 +1,24 @@
+ 
+ <app-header></app-header>
+ <div class=" m-5 d-flex justify-content-start">
+  <div class="row">
+    <div class="col mt-4 " *ngFor="let data of nonveg">
+      <div>
+        <div class="p-2  mt-4 img-thumbnail ">
+          <img [src]="getImage(data.image)" width="300px" height="250px">
+
+          <div class=" color ms-5 mt-4 ">
+            <h5>Product Name: {{data.productName}}</h5>
+            <h5>Price:{{data.price}}</h5>
+            <h5>Quantity:{{data.quantity}}</h5>
+             <!-- <h5>Category:{{data.Category}}</h5> -->
+          </div>
+          <button class="btn btn-primary ms-5 "  (click)="post(data)">ADD TO CART</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  

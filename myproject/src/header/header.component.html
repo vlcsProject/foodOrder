@@ -1,0 +1,82 @@
+<div class="shadow-lg   rounded sticky-top container-fluid">
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid mt-3">
+      <img src="../assets/icon1.png" height="100px">
+      <a class="navbar-brand colour ms-3" href="#">FOODIES WORLD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-lg-flex justify-content-around" id="navbarNavDropdown">
+
+        <ul class="navbar-nav">
+
+          <a class="nav-link style ms-2 mt-2 " href=" " (click)="home()">
+            𝑯𝑶𝑴𝑬</a>
+
+
+
+          <div class="dropdown ">
+
+            <a class="nav-link style ms-3  " href="#"> <button class=" dropbtn">𝑪𝑨𝑻𝑬𝑮𝑶𝑹𝒀</button></a>
+
+
+            <div class="dropdown-content ">
+              <div class="sub-dropdown box " *ngFor="let data of categoryitem">
+                <a>{{data.categoryName}}</a>
+                <div class="sub-dropdown-content ">
+                  <a *ngFor="let item of data.subcategory" href="/food/?id={{item.id}}"> {{item.subCategoryName}}</a>
+
+                </div>
+
+
+
+              </div>
+
+            </div>
+          </div>
+        </ul>
+
+
+
+        
+      
+      
+ 
+       <div class="ms-5">
+          <div class="input-group" style="width: 400px;">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" />
+            <button type="button" class="btn btn-outline-primary">Search</button>
+          </div>
+
+
+        </div> 
+        <div class="ms-5">
+          <img src="../assets/shopping-cart.png" width="40px" height="40px" (click)="cart()">
+        </div>
+
+        <ul class="nav align-middle ms-5">
+
+          <li class="nav-item ">
+            <a class="nav-link style mt-4 me-5  " (click)="login()" *ngIf="!userName">𝙇𝙊𝙂𝙄𝙉</a>
+            <h2>{{userName}}</h2>
+            <button class="bt btn-outline-success" *ngIf="userName" (click)="logout()" class="out()"> Log Out</button>
+          </li>
+
+
+
+        </ul>
+
+
+      </div>
+
+
+    </div>
+
+
+
+  </nav>
+
+
+</div>

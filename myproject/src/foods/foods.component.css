@@ -1,0 +1,14 @@
+
+.color {
+    font-family: cursive;
+    font-size: 10px; 
+    color:black
+}
+
+.img-thumbnail{
+    transition: transform 0.2s;
+}
+.img-thumbnail:hover {
+    transform: scale(1.1);
+  }
+   
