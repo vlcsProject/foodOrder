@@ -17,22 +17,13 @@ export class BuyComponent implements OnInit {
   cartItems: any;
   inputValue: number = 1;
   total: any;
+  addItems: any;
   
-  calculateTotal(event: any): void {
-    const inputValue:any = (event.target as HTMLInputElement).value;
-    console.log(inputValue);
-      this.total = inputValue * this.data.price ;
-  }
   
 
 
   
-  gotocheckout() {
-  if(this.cartItems.length > 0){
- 
-  this.buy = true;
-  }}
-
+  
   constructor(private route: Router, private routes: ActivatedRoute, private api: ApiService) {
     this.id = this.routes.snapshot.queryParams['id'];
   }
@@ -44,17 +35,32 @@ export class BuyComponent implements OnInit {
     });
   }
 
-  getImage(image: string): string {
-    return `http://localhost:8080/${image}`;
-  }
+  
+  getImage(image: String): String {
+    
+    return `http://localhost:8080/products/getProductImage/${image}`;
+}
 cart(){
   this.route.navigate(['cart'])
-
-
-
-
-
   
 }
+
+totalPrice(item: any): number {
+  return item.price * item.price; 
+}
+getGrandTotal(): number {
+  let grandTotal = 0;
+
+  for (let item of this.addItems) {
+    grandTotal += this.totalPrice(item);
+  }
+
+  return grandTotal;
+}
+
+calculateTotal(): void {
+  
+}
+
 
 }

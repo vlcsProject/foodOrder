@@ -35,12 +35,12 @@ export class FoodsComponent implements OnInit {
 
   }
 
-
   getImage(image: String): String {
+     
+    return `http://localhost:8080/products/getProductImage/${image}`;
+}
 
-    return `http://localhost:8080/${image}`;
-
-  }
+ 
 
 
   gets() {
@@ -61,7 +61,7 @@ export class FoodsComponent implements OnInit {
     console.log(data);
     let payload: any = {};
     payload['productName'] = data.productName;
-     
+    payload['quantity'] = 1; 
     payload['price'] = data.price;
     payload['image'] = data.image;
     payload['user'] = {
@@ -80,12 +80,8 @@ export class FoodsComponent implements OnInit {
     this.route.navigate(['login'])
   }
   }
-// buy(){
-//     this.dialog.open(BuyComponent);
-// }
-// buy(id:any){
-//   this.route.navigate(['buy'],{queryParams :{id:id}})
-// }
+
+
 getall(){
   let data = localStorage.getItem("res");
   if (data) {
@@ -102,6 +98,6 @@ getall(){
   })
 }
 buy(){
-  this.route.navigate(['buy'])
+  this.route.navigate(['cart'])
 }
 }

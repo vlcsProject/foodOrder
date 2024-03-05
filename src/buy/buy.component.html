@@ -1,5 +1,5 @@
-<app-header></app-header>
-<div class="container-fluid">
+ <app-header></app-header>
+<!-- <div class="container-fluid">
   <div class=" m-5 d-flex justify-content-center">
     <div class="row">
       <div class="col mt-4 ">
@@ -13,16 +13,94 @@
               <h5 class="style">Product Name : {{data.productName}}</h5>
               <h5 class="style">Price : {{data.price}}</h5>
               <h5 class="style">Quantity : {{data.quantity}} <input class="class ms-2" type="number" data-zeros="true"
-              [value]="inputValue" min="1" max="1000" (change)="calculateTotal($event)"></h5>
+                  [value]="inputValue" min="1" max="1000" (change)="calculateTotal($event)"></h5>
 
-              <div class="d-flex justify-content-end" >
-                <p class="amount mt-3 ">Total Price :   <i class="fa-solid fa-indian-rupee-sign  "></i>{{ total ? total : data.price }} </p>
-                <button class="btn  btn-small btn-outline-warning ms-5 width mt-3" (click)="cart()">ADD PRODUCT <i class="fa-solid fa-plus"></i></button>
+              <div class="d-flex justify-content-end">
+                <p class="amount mt-3 ">Total Price : <i class="fa-solid fa-indian-rupee-sign  "></i>{{ total ? total :
+                  data.price }} </p>
               </div>
-            
+
+
+
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>  -->
+  
+  <div class="container-fluid d-flex justify-content-center mt-5 bg-img">
+    <div class="container text-container">
+        <div class="text">
+            Contact us Form
+        </div>
+        <form class="mx-auto">
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" required>
+                    <div class="underline"></div>
+                    <label for="">First Name</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Last Name:</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Email Address:</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Product Name:</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data textarea">
+                    <textarea rows="8" cols="80" required></textarea>
+                    <br />
+                    <div class="underline"></div>
+                    <label for="">Address:</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Mobile No:</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data textarea">
+                    <textarea rows="8" cols="80" required></textarea>
+                    <br />
+                    <div class="underline"></div>
+                    <label for="">Total Amount:</label>
+                </div>
+            </div>
+            <div class="form-row submit-btn d-flex justify-content-center">
+                <div class="input-data">
+                    <div class="inner"></div>
+                    <input type="button" value="Buy" onclick="calculateTotal()">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <p class="amount mt-3">GRAND TOTAL: <i class="fa-solid fa-indian-rupee-sign"></i> {{ getGrandTotal() }}</p>
+    <button class="btn btn-small btn-outline-warning ms-5 mt-3" style="width: 150px; height: 50px;"
+      (click)="buy()">BUY</button>
   </div>
+
+<script>
+    function calculateTotal() {
+        // You can implement your logic here to calculate the total amount
+        // For demonstration, let's say the total amount is $100
+        var totalAmount = 100;
+        // Update the Total Amount label
+        document.querySelector('label[for=""]Total Amount:').textContent = "Total Amount: $" + totalAmount;
+    }
+</script>
