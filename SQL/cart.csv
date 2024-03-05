@@ -1,0 +1,8 @@
+"id";"image";"price";"product_id";"product_name";"quantity";"status";"user_id"
+1;"1708413804332 Hyderabadi-Egg-Dum-Biryani.jpg";100;20;"egg briyani";"";"A";1
+2;"1708328327094 prawnbriyani.jpg";500;3;"prawn briyani";"1";"A";2
+3;"1708329047716 beefbriyani.jpg";300;5;"beef briyani";"1";"A";1
+4;"1708329485418 kadaibiryani.webp";350;7;"kadai briyani";"1";"A";1
+5;"1708493390826 chicken thokku briyani.avif";300;29;"chicken thokku briyani";"1";"A";1
+6;"1708725649674 dove.jpeg";12000;283;"dove";"1";"A";1
+7;"1708493682876 mutton thokku briyani.gif";500;30;"mutton thokku briyani";"1";"A";1
