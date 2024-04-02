@@ -12,6 +12,9 @@ export class HeaderComponent implements OnInit {
   categoryitem:any[]=[];
   // userById: any[]=[];
   userName: any;
+ 
+  
+
 
   constructor(private route:Router ,private api:ApiService) { 
     this.filteredItems = this.items;

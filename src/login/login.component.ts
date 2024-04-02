@@ -37,21 +37,27 @@ export class LoginComponent implements OnInit {
     
   }
   loginentity: Loginentity = new Loginentity()
-
   post() {
-
-
     this.loginentity['userName'] = this.loginForm.controls['username'].value?.toString();
     this.loginentity['password'] = this.loginForm.controls['password'].value?.toString();
+  
     this.api.post('/user/login', this.loginentity).subscribe(
       (res) => {
         console.log(res);
         window.localStorage.setItem("res", JSON.stringify(res)); 
-
-
-        if (res && res.userName ) {
-          this.snackbar.showSuccessMessage('login successfully ' + res.userName );
-          this.route.navigate(['']);
+  
+        // Check if res exists and has the role property
+        if (res && res.role) {
+          if (res.role === "ROLE_ADMIN" ) {
+            this.route.navigate(['nav']);
+            this.snackbar.showSuccessMessage('Admin Login successfully ' + res.userName ); 
+          } else if (res.role === "ROLE_USER" ) {
+            this.route.navigate(['']);
+            this.snackbar.showSuccessMessage('User Login successfully ' + res.userName ); 
+          }
+        } else {
+          console.error("Response object or role property is null or undefined.");
+          // Handle the case where res or res.role is null or undefined
         }
       },
       (error: any) => {
@@ -62,6 +68,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  
   res(res: any) {
     throw new Error('Method not implemented.');
   }

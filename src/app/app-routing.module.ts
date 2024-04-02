@@ -7,6 +7,8 @@ import { HeaderComponent } from 'src/header/header.component';
 import { HomeComponent } from 'src/home/home.component';
 import { LoginComponent } from 'src/login/login.component';
 import { SignupComponent } from 'src/signup/signup.component';
+import { AboutusComponent } from 'src/aboutus/aboutus.component';
+import { ContactComponent } from 'src/contact/contact.component';
 
 const routes: Routes = [
 
@@ -18,17 +20,10 @@ const routes: Routes = [
   {path:"",component:HomeComponent} ,
   {path:"cart",component:CartComponent},
   {path:'buy',component:BuyComponent},
-  {path:'cart',component:CartComponent},
-
-
-
-
-
-
-
-
-  
-
+  {path:"cart",component:CartComponent},
+  {path:"about",component:AboutusComponent},
+  {path:"contact",component:ContactComponent},
+  {path:"nav",loadChildren:()=> import('./admin/admin.module').then(m => m.AdminModule)},
 
 
 

@@ -27,7 +27,9 @@ export class SignupComponent implements OnInit {
     name: new FormControl("", [Validators.required]),
     number: new FormControl("", [Validators.required, Validators.minLength(10), Validators.pattern(/^[0-9]+$/)]),
     email: new FormControl("", [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@gmail\.com$/)]),
-    password: new FormControl("", [Validators.required, Validators.minLength(8)])
+    password: new FormControl("", [Validators.required, Validators.minLength(8)]),
+    role: new FormControl("ROLE_USER", [Validators.required]),
+
   });
   get passWord() {
     return this.signupForm.get('password');
@@ -40,6 +42,11 @@ export class SignupComponent implements OnInit {
   get eMail() {
     return this.signupForm.get('email');
   }
+  get role() {
+    return this.signupForm.get('role');
+  }
+
+
   displaymodel() {
     this.display = 'block'
   }
@@ -57,6 +64,7 @@ export class SignupComponent implements OnInit {
     this.signupentity.mobileNo = this.signupForm.controls['number'].value ? +this.signupForm.controls['number'].value : undefined;
     this.signupentity['emailId'] = this.signupForm.controls['email'].value?.toString();
     this.signupentity['password'] = this.signupForm.controls.password.value?.toString();
+    this.signupentity['role'] = this.signupForm.controls ['role'].value?.toString();
 
     this.api.sigPpost(this.signupentity).subscribe((res) => { 
       console.log(res);

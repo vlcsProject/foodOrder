@@ -3,4 +3,5 @@ export class Signupentity {
     password?:string;
     mobileNo?:number;
     emailId?:string;
+    role: string | undefined;
 }

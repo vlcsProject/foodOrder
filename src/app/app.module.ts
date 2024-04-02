@@ -14,8 +14,10 @@ import { SignupComponent } from 'src/signup/signup.component';
 import { HomeComponent } from 'src/home/home.component';
 import { CartComponent } from 'src/cart/cart.component';
 import { BuyComponent } from 'src/buy/buy.component';
-import {MatDialogModule} from '@angular/material/dialog'; 
-@NgModule({
+import {MatDialogModule} from '@angular/material/dialog';
+import { AboutusComponent } from 'src/aboutus/aboutus.component';
+import { ContactComponent } from 'src/contact/contact.component';
+ @NgModule({
   declarations: [								
     AppComponent,
       HeaderComponent,
@@ -24,8 +26,10 @@ import {MatDialogModule} from '@angular/material/dialog';
       SignupComponent,
       HomeComponent,
       CartComponent,
-      BuyComponent
-   ],
+      BuyComponent,
+      AboutusComponent,
+      ContactComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
