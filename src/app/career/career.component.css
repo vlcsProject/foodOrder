@@ -1,0 +1,43 @@
+
+.page-header {
+    position: relative;
+    text-align: center;
+    color: #fff; 
+    padding: 100px 0;  
+    background-image: url("../../assets/background.jpg");
+  
+    
+    background-size: cover; 
+}
+
+
+.searchbox-card {
+    background-color: transparent; 
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heading {
+    margin-bottom: 20px;
+  }
+  
+  .icon_svg {
+    text-align: center;
+  }
+  
+  .icon_svg img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .discription {
+    text-align: center;
+  }
+
+  
+
